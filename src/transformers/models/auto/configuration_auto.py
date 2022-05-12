@@ -29,6 +29,7 @@ logger = logging.get_logger(__name__)
 CONFIG_MAPPING_NAMES = OrderedDict(
     [
         # Add configs here
+        ("trajectory_transformer", "TrajectoryTransformerConfig"),
         ("yolos", "YolosConfig"),
         ("tapex", "BartConfig"),
         ("dpt", "DPTConfig"),
@@ -237,6 +238,7 @@ CONFIG_ARCHIVE_MAP_MAPPING_NAMES = OrderedDict(
 MODEL_NAMES_MAPPING = OrderedDict(
     [
         # Add full (and cased) model names here
+        ("trajectory_transformer", "Trajectory Transformer"),
         ("yolos", "YOLOS"),
         ("tapex", "TAPEX"),
         ("dpt", "DPT"),

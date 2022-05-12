@@ -284,6 +284,10 @@ _import_structure = {
     "models.t5": ["T5_PRETRAINED_CONFIG_ARCHIVE_MAP", "T5Config"],
     "models.tapas": ["TAPAS_PRETRAINED_CONFIG_ARCHIVE_MAP", "TapasConfig", "TapasTokenizer"],
     "models.tapex": ["TapexTokenizer"],
+    "models.trajectory_transformer": [
+        "TRAJECTORY_TRANSFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP",
+        "TrajectoryTransformerConfig",
+    ],
     "models.transfo_xl": [
         "TRANSFO_XL_PRETRAINED_CONFIG_ARCHIVE_MAP",
         "TransfoXLConfig",
@@ -1566,6 +1570,14 @@ else:
             "load_tf_weights_in_t5",
         ]
     )
+    _import_structure["models.trajectory_transformer"].extend(
+        [
+            "TRAJECTORY_TRANSFORMER_PRETRAINED_MODEL_ARCHIVE_LIST",
+            "TrajectoryTransformerModel",
+            "TrajectoryTransformerPreTrainedModel",
+            "load_tf_weights_in_trajectory_transformer",
+        ]
+    )
     _import_structure["models.transfo_xl"].extend(
         [
             "TRANSFO_XL_PRETRAINED_MODEL_ARCHIVE_LIST",
@@ -2761,6 +2773,10 @@ if TYPE_CHECKING:
     from .models.t5 import T5_PRETRAINED_CONFIG_ARCHIVE_MAP, T5Config
     from .models.tapas import TAPAS_PRETRAINED_CONFIG_ARCHIVE_MAP, TapasConfig, TapasTokenizer
     from .models.tapex import TapexTokenizer
+    from .models.trajectory_transformer import (
+        TRAJECTORY_TRANSFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        TrajectoryTransformerConfig,
+    )
     from .models.transfo_xl import (
         TRANSFO_XL_PRETRAINED_CONFIG_ARCHIVE_MAP,
         TransfoXLConfig,
@@ -3833,6 +3849,12 @@ if TYPE_CHECKING:
             T5Model,
             T5PreTrainedModel,
             load_tf_weights_in_t5,
+        )
+        from .models.trajectory_transformer import (
+            TRAJECTORY_TRANSFORMER_PRETRAINED_MODEL_ARCHIVE_LIST,
+            TrajectoryTransformerModel,
+            TrajectoryTransformerPreTrainedModel,
+            load_tf_weights_in_trajectory_transformer,
         )
         from .models.transfo_xl import (
             TRANSFO_XL_PRETRAINED_MODEL_ARCHIVE_LIST,
